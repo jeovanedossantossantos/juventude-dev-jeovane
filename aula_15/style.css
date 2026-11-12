@@ -1,0 +1,354 @@
+
+/* =================================
+   1. CONFIGURAÇÕES GERAIS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #11111b;
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* =================================
+   2. CABEÇALHO E MENU
+================================= */
+
+.topo {
+    background: #1c1c2e;
+    padding: 20px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.marca {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.marca span {
+    color: #ff3d7f;
+}
+
+/* LISTA DO MENU */
+
+.menu {
+    list-style: none;
+
+    display: flex;
+    gap: 30px;
+}
+
+/* LINKS */
+
+.menu a {
+    position: relative;
+    display: inline-block;
+
+    color: #f5f5f5;
+    text-decoration: none;
+
+    padding: 8px 4px;
+
+    transition: color .3s;
+}
+
+/* =================================
+   3. PSEUDO-CLASSES
+================================= */
+
+/* QUANDO O MOUSE PASSA */
+
+.menu a:hover {
+    color: #ffc857;
+}
+
+/* QUANDO O LINK É PRESSIONADO */
+
+.menu a:active {
+    transform: translateY(2px);
+}
+
+/* QUANDO RECEBE FOCO */
+
+.menu a:focus {
+    color: #ffc857;
+}
+
+/* FOCO VISÍVEL PELO TECLADO */
+
+.menu a:focus-visible {
+    outline: 3px solid #ffc857;
+    outline-offset: 5px;
+    border-radius: 4px;
+}
+
+/* PÁGINA ATUAL */
+
+.menu a[aria-current="page"] {
+    color: #ff3d7f;
+}
+
+/* =================================
+   4. PSEUDO-ELEMENTOS
+================================= */
+
+/* LINHA DECORATIVA */
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+
+    width: 0;
+    height: 3px;
+
+    background: #ffc857;
+
+    transition: width .3s;
+}
+
+/* LINHA APARECE NO HOVER E FOCO */
+
+.menu a:hover::after,
+.menu a:focus-visible::after {
+    width: 100%;
+}
+
+/* =================================
+   5. SEÇÃO INICIAL
+================================= */
+
+.inicio {
+    min-height: 85vh;
+    padding: 100px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.destaque {
+    color: #ff3d7f;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.inicio h1 {
+    font-size: clamp(40px, 6vw, 70px);
+    margin: 15px 0;
+}
+
+.inicio h1 span {
+    display: block;
+    color: #ffc857;
+}
+
+.inicio p {
+    max-width: 550px;
+    margin-bottom: 25px;
+}
+
+/* =================================
+   6. BOTÕES
+================================= */
+
+.botao {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    background: #ff3d7f;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 8px;
+
+    transition: .3s;
+}
+
+.botao:hover {
+    background: #ffc857;
+    color: #11111b;
+    transform: translateY(-3px);
+}
+
+.botao:focus-visible {
+    outline: 3px solid #ffc857;
+    outline-offset: 5px;
+}
+
+.botao:active {
+    transform: scale(.96);
+}
+
+/* =================================
+   7. SEÇÕES
+================================= */
+
+.secao {
+    padding: 80px 8%;
+}
+
+.secao h2 {
+    font-size: 36px;
+    color: #ffc857;
+    margin-bottom: 25px;
+}
+
+/* =================================
+   8. PROJETOS
+================================= */
+
+.projetos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+}
+
+.card {
+    background: #1c1c2e;
+    padding: 30px;
+    border-radius: 12px;
+
+    border: 1px solid #33334a;
+
+    transition: transform .3s, border-color .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #ff3d7f;
+}
+
+.card h3 {
+    color: #ff3d7f;
+    margin-bottom: 12px;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ffc857;
+}
+
+.card a:focus-visible {
+    outline: 3px solid #ffc857;
+    outline-offset: 4px;
+}
+
+/* =================================
+   9. CONTATO E RODAPÉ
+================================= */
+
+.contato {
+    background: #1c1c2e;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #aaa;
+}
+
+/* =================================
+   10. CHECKBOX HACK
+================================= */
+
+/* ESCONDE VISUALMENTE O CHECKBOX,
+   MAS MANTÉM O ELEMENTO ACESSÍVEL */
+
+.menu-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* FOCO NO CHECKBOX */
+
+.menu-toggle:focus-visible + .menu-botao {
+    outline: 3px solid #ffc857;
+    outline-offset: 5px;
+}
+
+/* BOTÃO HAMBÚRGUER */
+
+.menu-botao {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* CHECKBOX MARCADO: ABRE O MENU */
+
+.menu-toggle:checked ~ nav .menu {
+    display: flex;
+}
+
+/* =================================
+   11. RESPONSIVIDADE
+================================= */
+
+/* CELULARES E TABLETS */
+
+@media (max-width: 767px) {
+
+    .topo {
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .menu-botao {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+
+        flex-direction: column;
+        gap: 15px;
+
+        width: 100%;
+        padding-top: 25px;
+    }
+
+    .topo nav {
+        width: 100%;
+    }
+
+    .menu-toggle:checked ~ nav .menu {
+        display: flex;
+    }
+
+    .inicio {
+        min-height: 75vh;
+    }
+
+    .secao {
+        padding: 60px 8%;
+    }
+
+}

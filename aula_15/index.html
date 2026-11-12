@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Portfólio | Desenvolvedor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- CABEÇALHO -->
+    <header class="topo">
+        <a href="#inicio" class="marca">
+            Dev<span>.</span>
+        </a>
+        <!-- CHECKBOX HACK -->
+        <input
+            type="checkbox"
+            id="menu-toggle"
+            class="menu-toggle"
+        >
+        <!-- BOTÃO HAMBÚRGUER -->
+        <label
+            for="menu-toggle"
+            class="menu-botao"
+            aria-label="Abrir ou fechar menu de navegação"
+        >
+            ☰
+        </label>
+
+        <!-- NAVEGAÇÃO -->
+        <nav aria-label="Navegação principal">
+
+            <ul class="menu">
+
+                <li>
+                    <a href="#inicio" aria-current="page">
+                        Início
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#sobre">
+                        Sobre
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projetos">
+                        Projetos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contato">
+                        Contato
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- INÍCIO -->
+        <section id="inicio" class="inicio">
+
+            <p class="destaque">OLÁ, EU SOU</p>
+
+            <h1>
+                João Silva
+                <span>Desenvolvedor Web</span>
+            </h1>
+
+            <p>
+                Transformo ideias em experiências digitais
+                utilizando HTML, CSS e JavaScript.
+            </p>
+
+            <a href="#projetos" class="botao">
+                Conheça meus projetos
+            </a>
+
+        </section>
+
+        <!-- SOBRE -->
+        <section id="sobre" class="secao">
+
+            <h2>Sobre mim</h2>
+
+            <p>
+                Sou estudante de desenvolvimento web e estou
+                aprendendo a construir páginas modernas,
+                acessíveis e responsivas.
+            </p>
+
+        </section>
+
+        <!-- PROJETOS -->
+        <section id="projetos" class="secao">
+
+            <h2>Meus projetos</h2>
+
+            <div class="projetos">
+
+                <article class="card">
+                    <h3>Projeto 01</h3>
+                    <p>Meu primeiro site desenvolvido com HTML.</p>
+                    <a href="#contato">Saiba mais</a>
+                </article>
+
+                <article class="card">
+                    <h3>Projeto 02</h3>
+                    <p>Uma página estilizada utilizando CSS.</p>
+                    <a href="#contato">Saiba mais</a>
+                </article>
+
+                <article class="card">
+                    <h3>Projeto 03</h3>
+                    <p>Um layout responsivo para dispositivos móveis.</p>
+                    <a href="#contato">Saiba mais</a>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="secao contato">
+
+            <h2>Vamos conversar?</h2>
+
+            <p>
+                Entre em contato para conhecer mais sobre
+                meus projetos.
+            </p>
+
+            <a href="mailto:contato@email.com" class="botao">
+                Enviar e-mail
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>© 2026 João Silva — Desenvolvedor Web</p>
+    </footer>
+
+</body>
+</html>
